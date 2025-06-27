@@ -52,6 +52,8 @@ export default function Hero() {
 const profile = {
     name: 'Robert MUGABE',
     title: 'Full-Stack Developer | Building Cool Staff | Problem Solver',
+    location: 'Kigali, Rwanda',
+    Seniority: 'Mid-Level',
     skills: [
         'React', 'NextJS', 'Javascript', 'NodeJS','ExpressJS',
         'MySQL', 'MongoDB', 'Postgresql', 'AWS', 'TypeScript',
