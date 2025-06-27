@@ -1,5 +1,5 @@
-import React from "react";
-import { Code2, Activity, Cpu, Layers, Network, Binary } from "lucide-react";
+import { Code2, Layers, Network } from "lucide-react";
+import PropTypes from 'prop-types';
 
 const ExperienceCard = ({
   title,
@@ -51,31 +51,39 @@ const ExperienceCard = ({
   </div>
 );
 
+ExperienceCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  period: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  icon: PropTypes.elementType.isRequired,
+};
+
 const ExperienceSection = () => {
   const experiences = [
     {
       icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
-      period: "2019 - 2020",
+      title: "Software Engineer Intern",
+      company: "MTN Rwanda",
+      period: "2024 - Present",
       description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
+        "Developing and maintaining scalable software solutions, focusing on backend systems and USSD based application.",
     },
     {
       icon: Layers,
-      title: "Junior Frontend Developer",
-      company: "Sera Programmer",
-      period: "2021 - 2023",
+      title: "Frontend Developer",
+      company: "BAG Innovation",
+      period: "2023 - 2024",
       description:
         "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
     },
     {
       icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
-      period: "2023 - Present",
+      title: "UI/UX Designer",
+      company: "MediXR",
+      period: "2022-2023",
       description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+        "Designed intuitive user interfaces and experiences for healthcare applications, enhancing usability and accessibility.",
     },
   ];
 
@@ -108,13 +116,13 @@ const ExperienceSection = () => {
           {/* Section header with enhanced effects */}
           <div className="flex flex-col items-center space-y-8 mb-20">
             <div className="relative">
-              <h2 className="text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
-                Professional Journey
+              <h2 className="text-5xl md:text-5xl font-black text-transparent bg-gradient-to-r from-white to-blue-500 bg-clip-text text-center">
+                Professional Experience
               </h2>
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
             </div>
             <p className="text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-2xl">
-              "Transforming ideas into digital reality, one project at a time"
+              &ldquo;Transforming ideas into digital reality, one project at a time&rdquo;
             </p>
           </div>
 

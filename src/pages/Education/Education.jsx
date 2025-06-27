@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import EducationLoader from "@/components/ui/EducationLoader";
+import { useState } from "react";
 import {
-  Star,
   Award,
   Calendar,
   BookOpen,
-  GraduationCap,
   Trophy,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -15,24 +12,24 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
+      degree: "ALX Software Engineering",
+      school: "African Leadership Experience",
       mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      year: "2022-2024",
+      achievements: ["GPA: 4.89", "Subject: Backend Development"],
+      skills: ["Backend Development", "Python", "Project Management", "Agile Methodologies"],
       description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+        "Completed a rigorous software engineering program focused on backend development, Python programming, and project management methodologies.",
     },
     {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
+      degree: "Bsc in Business Information Technology",
+      school: "University of Rwanda",
       mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
+      year: "2022-2025",
+      achievements: ["GPA: 4.25", "Subject: Programming"],
+      skills: ["Javascript", "Data Analysis", "Problem Solving", "Communication Skills"],
       description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+        "Graduated with a Bachelor of Science in Business Information Technology, specializing in programming and data analysis, with a strong emphasis on problem-solving and communication skills.",
     },
   ];
 
@@ -74,12 +71,11 @@ const EducationSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
-            Educational Journey
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-500 bg-clip-text text-transparent mb-6">
+            Education Journey
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover how academic excellence shapes innovative thinking and
-            professional growth.
+            Discover how academic excellence shaped my innovative thinking and growth.
           </p>
         </motion.div>
 

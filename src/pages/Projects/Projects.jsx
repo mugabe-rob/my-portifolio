@@ -5,44 +5,44 @@ import PropTypes from "prop-types";
 
 const projects = [
   {
-    title: "Olova! A Lightweight JavaScript Library",
+    title: "🚀 Medixr",
     description:
-      "A lightweight JavaScript library for creating beautiful, responsive UI components.",
-    src: "rock.jpg",
-    link: "https://i.postimg.cc/DwgWTfP0/Annotation-2025-03-19-113338.png",
-    color: "#5196fd",
-    githubLink: "https://github.com/olovajs/olova",
-    liveLink: "https://olova.js.org/",
+      "I worked on the frontend part of Medixr, a healthcare platform that connects patients with doctors for online consultations. It features a user-friendly interface, secure video calls, and appointment scheduling.",
+    src: "water.jpg",
+    link: "https://i.postimg.cc/hPzXFRRt/Screenshot-2025-06-26-161929.png",
+    color: "#fff",
+    githubLink: "#", // Add placeholder since this project may not have a public repo
+    liveLink: "https://medixr.org/",
   },
   {
-    title: "A sleek portfolio built with React and Tailwind CSS ",
+    title: "Volunteerfit!🌍",
     description:
-      "A sleek portfolio built with React and Tailwind CSS to showcase your skills, projects, and experience in a modern design.",
+      "Volunteerfit! An app designed to connect volunteers with local organizations, allowing users to find and join volunteer opportunities in their area, track their volunteer hours, and make a positive impact in their communities.",
+    src: "rock.jpg",
+    link: "https://i.postimg.cc/YC0bB9qm/Screenshot-2025-06-26-160813.png",
+    color: "#5196fd",
+    githubLink: "https://github.com/BaRemy/volunteerfit",
+    liveLink: "https://baremy.github.io/volunteerfit/",
+  },
+  {
+    title: "My Portfolio" + " 🌟 ",
+    description:
+      "A personal portfolio website showcasing my skills, projects, and experiences. Built with React, Tailwind CSS, and Framer Motion for smooth animations. Explore my work and connect with me!",
     src: "tree.jpg",
-    link: "https://i.postimg.cc/J75CKyrs/Annotation-2025-04-01-203959.png",
+    link: "https://i.postimg.cc/zGsVjtyP/Screenshot-2025-06-26-154129.png",
     color: "#8f89ff",
-    githubLink: "https://github.com/seraprogrammer/portfolio",
+    githubLink: "https://github.com/mugabe-rob/portfolio",
     liveLink: "https://codervai.vercel.app",
   },
   {
-    title: "🚀 CodeWhisperer",
+    title: "Fastfood 🍔",
     description:
-      "🚀 CodeWhisperer A powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
-    src: "water.jpg",
-    link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
-    color: "#fff",
-    githubLink: "https://github.com/seraprogrammer/codewhisperer",
-    liveLink: "https://codewhisperer.vercel.app/",
-  },
-  {
-    title: "CodeKori 🔥",
-    description:
-      "CodeKori is a powerful online code editor built with React and Tailwind CSS. Featuring real-time code execution, syntax highlighting, multi-language support, and a sleek UI. Start coding instantly! 💻✨",
+      "Fastfood is a modern food delivery app that allows users to order their favorite meals from local restaurants. It features a sleek design, real-time order tracking, and secure payment options.",
     src: "house.jpg",
-    link: "https://i.postimg.cc/cHQr4fpR/Annotation-2025-04-01-205350.png",
+    link: "https://i.postimg.cc/RFdMtXr8/Screenshot-2025-06-26-154704.png",
     color: "#ed649e",
-    githubLink: "https://github.com/seraprogrammer/CodeKori",
-    liveLink: "https://codekori.js.org",
+    githubLink: "https://github.com/mugabe-rob/FUTURE_FS_02",
+    liveLink: "https://frontend-self-nine-87.vercel.app/",
   },
 ];
 
@@ -54,23 +54,6 @@ export default function Projects() {
   });
 
   useEffect(() => {
-    // Add specific styles for 1366x768 resolution
-    const style = document.createElement("style");
-    style.textContent = `
-      @media screen and (width: 1366px) and (height: 768px),
-             screen and (width: 1367px) and (height: 768px),
-             screen and (width: 1368px) and (height: 769px) {
-        .project-card {
-          scale: 0.85;
-          margin-top: -5vh;
-        }
-        .project-container {
-          height: 90vh;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-
     // Resolution check function
     const checkResolution = () => {
       const isTargetResolution =
@@ -92,7 +75,6 @@ export default function Projects() {
     window.addEventListener("resize", checkResolution);
 
     return () => {
-      document.head.removeChild(style);
       window.removeEventListener("resize", checkResolution);
     };
   }, []);

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Send, Phone, MapPin, Mail } from "lucide-react";
+import { useState } from "react";
+import { Send, MapPin, Mail } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -45,6 +45,7 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("Sending message..."); // Show loading state
 
     if (!validateForm()) {
       setStatus("Please fill in all required fields correctly.");
@@ -53,13 +54,17 @@ export default function Contact() {
 
     // Create a new FormData object to send to Web3Forms API
     const form = new FormData();
-    form.append("access_key", "90f4b8af-e590-42b0-beaf-10b18f66a703"); // Replace with your Web3Forms access key
+    form.append("access_key", "5c484c94-e5b0-4a9f-8531-f7163de1de54");
     form.append("name", formData.name);
     form.append("email", formData.email);
-    form.append("subject", formData.subject || "New Contact Form Submission");
-    form.append("message", formData.message);
+    form.append("message", `Subject: ${formData.subject}\n\n${formData.message}`);
+
+    console.log("Submitting form data:", Object.fromEntries(form)); // Debug log
 
     try {
+      // Add a small delay to appear more human-like
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
       // Send form data to Web3Forms API
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -67,8 +72,9 @@ export default function Contact() {
       });
 
       const result = await response.json();
+      console.log("Web3Forms Response:", result); // Debug log
 
-      if (response.ok) {
+      if (response.ok && result.success) {
         setStatus("Message sent successfully!");
         setFormData({
           name: "",
@@ -78,11 +84,22 @@ export default function Contact() {
         });
         setErrors({});
       } else {
-        setStatus(result.message || "There was an error sending your message.");
+        // More specific error handling
+        const errorMessage = result.message || result.error || "There was an error sending your message.";
+        console.error("Web3Forms Error:", result); // Debug log
+        setStatus(errorMessage);
       }
     } catch (error) {
-      setStatus("An error occurred. Please try again.");
-      console.error("Error:", error);
+      console.error("Network Error:", error); // Debug log
+      
+      // More specific error messages
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        setStatus("Network error. Please check your internet connection and try again.");
+      } else if (error.name === 'AbortError') {
+        setStatus("Request timed out. Please try again.");
+      } else {
+        setStatus("Something went wrong. Please try again or contact me directly at mugaberoberto007@gmail.com");
+      }
     }
   };
 
@@ -101,7 +118,7 @@ export default function Contact() {
                   Get in Touch
                 </h2>
                 <p className="text-gray-300 text-lg">
-                  Have a question or want to work together? Drop us a message!
+                  Have a question or want to work together? Drop me a message!
                 </p>
               </div>
 
@@ -112,7 +129,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-400">olovajs@gmail.com</p>
+                    <p className="text-gray-400">mugaberoberto007@gmail.com</p>
                   </div>
                 </div>
 
@@ -122,7 +139,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Location</h3>
-                    <p className="text-gray-400">Laxmipure, Natore 6400</p>
+                    <p className="text-gray-400">Kigali, Rwanda</p>
                   </div>
                 </div>
               </div>
@@ -131,6 +148,14 @@ export default function Contact() {
             {/* Contact Form */}
             <div className="backdrop-blur-lg bg-white/5 p-8 rounded-2xl shadow-xl">
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot field - hidden from users but visible to bots */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: 'none' }}
+                />
+                
                 <div className="grid grid-cols-1 gap-6">
                   <div>
                     <input
@@ -209,7 +234,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity"
+                  className="w-full bg-gradient-to-r from-green-500 to-white text-black py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity"
                 >
                   <span>Send Message</span>
                   <Send className="w-4 h-4" />
