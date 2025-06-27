@@ -31,8 +31,8 @@ const projects = [
     src: "tree.jpg",
     link: "https://i.postimg.cc/zGsVjtyP/Screenshot-2025-06-26-154129.png",
     color: "#8f89ff",
-    githubLink: "https://github.com/mugabe-rob/portfolio",
-    liveLink: "https://codervai.vercel.app",
+    githubLink: "https://github.com/mugabe-rob/my-portifolio",
+    liveLink: "https://mugabe-robert.vercel.app/",
   },
   {
     title: "Fastfood 🍔",
