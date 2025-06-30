@@ -77,13 +77,13 @@ export default function Projects() {
         </div>
 
         {/* Navigation Controls */}
-        <div className="pb-8">
+        <div className="pb-4 md:pb-8">
           {/* Navigation Buttons */}
-          <div className="flex justify-center items-center gap-8">
+          <div className="flex justify-center items-center gap-3 md:gap-8 px-4">
             {/* Previous Button */}
             <motion.button
               onClick={prevProject}
-              className="group relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-black to-blue-600 rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white-500/25"
+              className="group relative flex items-center gap-2 md:gap-3 px-4 py-2 md:px-8 md:py-4 bg-gradient-to-r from-black to-blue-600 rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white-500/25"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               disabled={projects.length <= 1}
@@ -91,25 +91,25 @@ export default function Projects() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <motion.div
-                className="relative z-10 flex items-center gap-3"
+                className="relative z-10 flex items-center gap-2 md:gap-3"
                 whileHover={{ x: -3 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="16"
+                  height="16"
+                  className="md:w-5 md:h-5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-white"
                 >
                   <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
-                <span className="text-white font-semibold text-lg">Previous</span>
+                <span className="text-white font-semibold text-sm md:text-lg">Prev</span>
               </motion.div>
               
               {/* Ripple effect */}
@@ -117,9 +117,9 @@ export default function Projects() {
             </motion.button>
 
             {/* Project Counter */}
-            <div className="flex flex-col items-center gap-2 px-6">
-              <div className="text-gray-400 text-sm font-medium">Project</div>
-              <div className="text-white text-xl font-bold">
+            <div className="flex flex-col items-center gap-1 md:gap-2 px-3 md:px-6">
+              <div className="text-gray-400 text-xs md:text-sm font-medium">Project</div>
+              <div className="text-white text-lg md:text-xl font-bold">
                 {currentProject + 1} / {projects.length}
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function Projects() {
             {/* Next Button */}
             <motion.button
               onClick={nextProject}
-              className="group relative flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25"
+              className="group relative flex items-center gap-2 md:gap-3 px-4 py-2 md:px-8 md:py-4 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/25"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               disabled={projects.length <= 1}
@@ -135,22 +135,22 @@ export default function Projects() {
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-teal-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <motion.div
-                className="relative z-10 flex items-center gap-3"
+                className="relative z-10 flex items-center gap-2 md:gap-3"
                 whileHover={{ x: 3 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <span className="text-white font-semibold text-lg">Next</span>
+                <span className="text-white font-semibold text-sm md:text-lg">Next</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="16"
+                  height="16"
+                  className="md:w-5 md:h-5"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-white"
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -159,6 +159,23 @@ export default function Projects() {
               {/* Ripple effect */}
               <div className="absolute inset-0 bg-white opacity-0 group-active:opacity-20 rounded-full transition-opacity duration-150" />
             </motion.button>
+          </div>
+
+          {/* Mobile Dot Indicators (optional alternative navigation) */}
+          <div className="flex justify-center items-center gap-2 mt-4 md:hidden">
+            {projects.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => goToProject(index)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === currentProject 
+                    ? 'bg-white scale-125' 
+                    : 'bg-gray-600 hover:bg-gray-400'
+                }`}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -331,7 +348,7 @@ function Card({ project, projectIndex }) {
                     Live
                   </span>
                 </motion.a>
-              </div>
+                </div>
             </motion.div>
           </div>
         </div>
