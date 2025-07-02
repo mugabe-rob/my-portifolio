@@ -28,9 +28,9 @@ export default function About() {
                 specializing in creating innovative web solutions and
                 user-friendly interfaces.{" "}
                 <span className="font-bold text-white">
-                  As the founder of Tripspotter
+                  As a young deeloper with a keen interest in web development.
                 </span>
-                , I&apos;m dedicated to simplifying development workflows.
+                 I am dedicated to simplifying development workflows.
               </p>
               <p className="text-white">
                 My focus is on making web development faster, easier, and

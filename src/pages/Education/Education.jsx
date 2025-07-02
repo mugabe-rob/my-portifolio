@@ -16,7 +16,7 @@ const EducationSection = () => {
       school: "African Leadership Experience",
       mascot: "📘",
       year: "2022-2024",
-      achievements: ["GPA: 4.89", "Subject: Backend Development"],
+      achievements: ["GPA: 4.89", "Course: Backend Development"],
       skills: ["Backend Development", "Python", "Project Management", "Agile Methodologies"],
       description:
         "Completed a rigorous software engineering program focused on backend development, Python programming, and project management methodologies.",
