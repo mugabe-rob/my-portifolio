@@ -26,10 +26,10 @@ const EducationSection = () => {
       school: "University of Rwanda",
       mascot: "📗",
       year: "2022-2025",
-      achievements: ["GPA: 4.25", "Subject: Programming"],
-      skills: ["Javascript", "Data Analysis", "Problem Solving", "Communication Skills"],
+      achievements: ["GPA: 3.38", "Subject: Programming"],
+      skills: ["Javascript", "Data Analysis", "Project Management", "Communication Skills"],
       description:
-        "Graduated with a Bachelor of Science in Business Information Technology, specializing in programming and data analysis, with a strong emphasis on problem-solving and communication skills.",
+        "Expects to graduate with a Bachelor in Business Information Technology, specializing in programming and data analysis, with a strong emphasis on problem-solving and communication skills.",
     },
   ];
 

@@ -81,7 +81,7 @@ const ExperienceSection = () => {
       icon: Code2,
       title: "UI/UX Designer",
       company: "MediXR",
-      period: "2022-2023",
+      period: "2022 - 2023",
       description:
         "Designed intuitive user interfaces and experiences for healthcare applications, enhancing usability and accessibility.",
     },
