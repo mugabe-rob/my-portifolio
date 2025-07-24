@@ -28,7 +28,7 @@ export default function About() {
                 specializing in creating innovative web solutions and
                 user-friendly interfaces.{" "}
                 <span className="font-bold text-white">
-                  As a young deeloper with a keen interest in web development.
+                  As a young developer with a keen interest in web development.
                 </span>
                  I am dedicated to simplifying development workflows.
               </p>
