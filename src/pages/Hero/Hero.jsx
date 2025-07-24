@@ -10,7 +10,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 // Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-25">
       <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_0%,black)]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +20,8 @@ const GridBackground = () => {
         >
           <pattern
             id="grid"
-            width="40"
-            height="40"
+            width="30"
+            height="30"
             patternUnits="userSpaceOnUse"
           >
             <rect
@@ -30,7 +30,7 @@ const GridBackground = () => {
               fill="none"
               stroke="white"
               strokeWidth="0.5"
-              className="opacity-40 animate-gridPulse"
+              className="opacity-50 animate-gridPulse"
             />
           </pattern>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -51,12 +51,12 @@ export default function Hero() {
   const [code] = useState(`
 const profile = {
     name: 'Robert MUGABE',
-    title: 'Full-Stack Developer | Building Cool Staff | Problem Solver',
+    title: 'Full-Stack Developer | Building Impactful Solutions | Problem Solver',
     location: 'Kigali, Rwanda',
     Seniority: 'Mid-Level',
     skills: [
-        'React', 'NextJS', 'Javascript', 'NodeJS','ExpressJS',
-        'MySQL', 'MongoDB', 'Postgresql', 'AWS', 'TypeScript',
+        'React', 'Next.js', 'JavaScript', 'Node.js', 'Express.js',
+        'MySQL', 'MongoDB', 'PostgreSQL', 'AWS', 'TypeScript',
         'GraphQL', 'Git', 'Java', 'UI/UX Design'
     ],
     hardWorker: true,
